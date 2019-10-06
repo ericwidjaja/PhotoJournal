@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="137"/>
         </scene>
-        <!--View Controller-->
+        <!--Journal Entry Image Picker View Controller-->
         <scene sceneID="ih3-Ri-W1D">
             <objects>
-                <viewController id="31R-9n-NFs" sceneMemberID="viewController">
+                <viewController id="31R-9n-NFs" customClass="JournalEntryImagePickerViewController" customModule="PhotoJournal_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vIn-Dc-hKb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +141,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="saD-gq-2Xb"/>
                     </view>
+                    <connections>
+                        <outlet property="journalCaptionTextView" destination="1tl-2m-4I6" id="hj3-QG-omX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ml-Vy-ha7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
