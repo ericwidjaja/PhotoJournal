@@ -125,7 +125,11 @@
                                                 <action selector="cancelButtonSelected:" destination="31R-9n-NFs" id="6cl-J3-drj"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tTu-60-fud"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tTu-60-fud" userLabel="Save Button Selected">
+                                            <connections>
+                                                <action selector="savePhotoButton:" destination="31R-9n-NFs" id="Tjd-lu-ffi"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -142,7 +146,6 @@
                                 <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="j7E-Jh-teE"/>
                                     <barButtonItem image="photo.on.rectangle" catalog="system" id="Law-XW-aq1">
                                         <connections>
                                             <action selector="photoLibraryAccess:" destination="31R-9n-NFs" id="q6W-2f-gXu"/>
@@ -153,7 +156,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KHJ-O6-Gcc"/>
                                     <barButtonItem style="plain" systemItem="camera" id="d7b-FJ-jtH">
                                         <connections>
-                                            <action selector="cameraButtonSelected:" destination="31R-9n-NFs" id="B61-De-LA6"/>
+                                            <action selector="takePhotoCameraButton:" destination="31R-9n-NFs" id="egb-1V-SUn"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pqH-dV-vwD"/>
@@ -170,10 +173,11 @@
                     <connections>
                         <outlet property="journalCaptionTextView" destination="1tl-2m-4I6" id="hj3-QG-omX"/>
                         <outlet property="journalPhoto" destination="4Wd-r5-sto" id="YP6-7Z-qsJ"/>
-                        <outlet property="saveButtonSelected" destination="tTu-60-fud" id="1Lw-Ip-BIo"/>
+                        <outlet property="saveButtonSelected" destination="tTu-60-fud" id="7KV-9K-MtV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ml-Vy-ha7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="j7E-Jh-teE"/>
             </objects>
             <point key="canvasLocation" x="148" y="831"/>
         </scene>
