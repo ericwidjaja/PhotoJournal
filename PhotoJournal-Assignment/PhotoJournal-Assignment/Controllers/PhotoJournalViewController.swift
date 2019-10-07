@@ -10,9 +10,19 @@ import UIKit
 
 class PhotoJournalViewController: UIViewController {
     
-    //MARK: - IBOUtlets:
+    
+    //MARK: - Property
+    var photos = [PhotoJournal]() {
+        didSet {
+            PhotoJournalViewController.reloadData()
+        }
+    }
+    
+    //MARK: - OUtlets:
     
     @IBOutlet weak var photoJournalCollectionView: UICollectionView!
+    
 
+    
     
 }

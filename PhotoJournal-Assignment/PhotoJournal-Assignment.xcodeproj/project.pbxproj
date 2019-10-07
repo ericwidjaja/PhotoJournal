@@ -19,6 +19,7 @@
 		DF47E49B2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E49A2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift */; };
 		DF47E49D234AAA8F0041D6C8 /* PhotoJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */; };
 		DF47E4AA234ADA310041D6C8 /* JournalCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4A9234ADA310041D6C8 /* JournalCellCollectionViewCell.swift */; };
+		DF47E4AE234BBE330041D6C8 /* PhotoPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4AD234BBE330041D6C8 /* PhotoPersistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		DF47E49A2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryImagePickerViewController.swift; sourceTree = "<group>"; };
 		DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournal.swift; sourceTree = "<group>"; };
 		DF47E4A9234ADA310041D6C8 /* JournalCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		DF47E4AD234BBE330041D6C8 /* PhotoPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPersistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				DF47E496234980950041D6C8 /* PersistenceHelper.swift */,
+				DF47E4AD234BBE330041D6C8 /* PhotoPersistence.swift */,
 			);
 			path = PersistenceHelper;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				DF47E47023497EB60041D6C8 /* PhotoJournalViewController.swift in Sources */,
 				DF47E49D234AAA8F0041D6C8 /* PhotoJournal.swift in Sources */,
 				DF47E47623497EB60041D6C8 /* PhotoJournal_Assignment.xcdatamodeld in Sources */,
+				DF47E4AE234BBE330041D6C8 /* PhotoPersistence.swift in Sources */,
 				DF47E46C23497EB60041D6C8 /* AppDelegate.swift in Sources */,
 				DF47E4AA234ADA310041D6C8 /* JournalCellCollectionViewCell.swift in Sources */,
 				DF47E49B2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift in Sources */,

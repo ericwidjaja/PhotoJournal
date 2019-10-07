@@ -44,4 +44,11 @@ struct PersistenceHelper<T: Codable> {
     private var url: URL {
         return filePathFromDocumentsDirectory(name: fileName)
     }
+    
+    func saveAtSpecificIndex(newElement: T, index: Int) throws {
+        var elements = try getObjects()
+        elements.insert(newElement, at: index)
+        try replace(elements: elements)
+        
+    }
 }
