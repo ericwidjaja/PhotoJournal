@@ -20,7 +20,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ri7-T1-vJg"/>
-                                    <barButtonItem systemItem="add" id="yVv-No-Qxv"/>
+                                    <barButtonItem systemItem="add" id="yVv-No-Qxv">
+                                        <connections>
+                                            <action selector="pushToJournalEntryVC:" destination="BYZ-38-t0r" id="6da-HC-OV2"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rmu-ZJ-AeN"/>
                                     <barButtonItem image="gear" catalog="system" id="YLD-d9-j2v"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2eJ-mQ-y2U"/>
@@ -62,11 +66,21 @@
                                                     <state key="normal" title="• • •">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="journalOptionButtonSelected:" destination="ePU-3q-pcM" eventType="touchUpInside" id="k8o-K3-6ib"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption Title Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCL-hg-cqb">
                                                     <rect key="frame" x="20" y="400" width="300" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeStampLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zx-vX-AC1">
+                                                    <rect key="frame" x="20" y="451" width="163" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -76,6 +90,7 @@
                                             <outlet property="journalCaptionLabel" destination="pCL-hg-cqb" id="lpi-jB-wVz"/>
                                             <outlet property="journalImageView" destination="ic5-TR-x0n" id="fBh-B1-lh0"/>
                                             <outlet property="journalOptionButton" destination="KiW-xD-XC5" id="1Im-uM-t5o"/>
+                                            <outlet property="journalTimeStampLabel" destination="0zx-vX-AC1" id="hIn-EL-1a4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -90,12 +105,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="137"/>
+            <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
         </scene>
         <!--Journal Entry Image Picker View Controller-->
         <scene sceneID="ih3-Ri-W1D">
             <objects>
-                <viewController id="31R-9n-NFs" customClass="JournalEntryImagePickerViewController" customModule="PhotoJournal_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addJournalEntryVC" id="31R-9n-NFs" customClass="JournalEntryImagePickerViewController" customModule="PhotoJournal_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vIn-Dc-hKb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,11 +125,7 @@
                                                 <action selector="cancelButtonSelected:" destination="31R-9n-NFs" id="6cl-J3-drj"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tTu-60-fud">
-                                            <connections>
-                                                <action selector="saveButtonSelected:" destination="31R-9n-NFs" id="NNb-4Z-h7s"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tTu-60-fud"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -134,7 +145,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="j7E-Jh-teE"/>
                                     <barButtonItem image="photo.on.rectangle" catalog="system" id="Law-XW-aq1">
                                         <connections>
-                                            <action selector="photoLibraryaButtonSelected:" destination="31R-9n-NFs" id="kBa-2w-hdu"/>
+                                            <action selector="photoLibraryAccess:" destination="31R-9n-NFs" id="q6W-2f-gXu"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6KE-aE-vMq"/>
@@ -159,6 +170,7 @@
                     <connections>
                         <outlet property="journalCaptionTextView" destination="1tl-2m-4I6" id="hj3-QG-omX"/>
                         <outlet property="journalPhoto" destination="4Wd-r5-sto" id="YP6-7Z-qsJ"/>
+                        <outlet property="saveButtonSelected" destination="tTu-60-fud" id="1Lw-Ip-BIo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ml-Vy-ha7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

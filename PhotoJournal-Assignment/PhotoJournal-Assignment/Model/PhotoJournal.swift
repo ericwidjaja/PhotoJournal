@@ -24,24 +24,21 @@ struct PhotoJournal: Codable {
          }
         return 0
      }
-    static func getCurrentTime() -> String {
-             
-             let now = Date()
-             
-             let formatter = DateFormatter()
-             
-             formatter.timeZone = TimeZone.current
-             
-             formatter.dateFormat = "MMM d, yyyy h:mm a"
-             
-             return formatter.string(from: now)
-         }
+    static func getTime() -> String {
          
-         init(id: Int, caption: String, ImageData: Data) {
-             self.id = id
-             self.caption = caption
-             self.ImageData = image
-             self.time = Photo.getCurrentTime()
-         }
+         let now = Date()
+         let formatter = DateFormatter()
+         formatter.timeZone = TimeZone.current
+         formatter.dateFormat = "MMM d, yyyy h:mm a"
+
+         return formatter.string(from: now)
+     }
+         
+     init(id: Int, caption: String, imageData: Data) {
+         self.id = id
+         self.caption = caption
+         self.imageData = imageData
+        self.timeStamp = PhotoJournal.getTime()
+     }
  }
 

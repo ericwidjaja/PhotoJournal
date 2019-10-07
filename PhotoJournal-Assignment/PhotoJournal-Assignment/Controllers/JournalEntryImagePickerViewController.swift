@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class JournalEntryImagePickerViewController: UIViewController {
     
@@ -15,8 +16,19 @@ class JournalEntryImagePickerViewController: UIViewController {
     @IBOutlet weak var journalPhoto: UIImageView!
     
     //MARK: - Properties
+    weak var delegate: LoadDataDelegate?
+    var savedPhoto: PhotoJournal!
+    var savedImage: UIImage! {
+        didSet {
+            journalPhoto.image = savedImage}
+    }
     
-    var photoJournal: PhotoJournal?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        displayCaptionTextView()
+        //displayImage()
+        
+    }
    
     
     
@@ -25,22 +37,52 @@ class JournalEntryImagePickerViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func saveButtonSelected(_ sender: UIBarButtonItem) {
+    
+    @IBOutlet weak var saveButtonSelected: UIBarButtonItem!
+    
+    
+    @IBAction func photoLibraryAccess(_ sender: UIBarButtonItem) {
         
-    }
-    @IBAction func cameraButtonSelected(_ sender: UIBarButtonItem) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(image, animated: true)
     }
     
-    @IBAction func photoLibraryaButtonSelected(_ sender: Any) {
+    
+    
+    private func displayCaptionTextView() {
+        journalCaptionTextView.text = "Enter photo description..."
+        journalCaptionTextView.delegate = self
+        formValidation()
     }
+    private func formValidation() {
+        if journalCaptionTextView.text != "Enter photo description..." , journalPhoto.image != UIImage(named: "noImage") {
+            saveButtonSelected.isEnabled = true
+        } else {
+            saveButtonSelected.isEnabled = false
+        }
+    }
+    
     
 }
 extension JournalEntryImagePickerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    let image = info[.originalImage] as? UIImage
+//        savedImage = image
+//        formValidation()
+//        entryImage.backgroundColor = UIColor.clear
+    self.dismiss(animated: true, completion: nil)
     }
+}
 
 
 extension JournalEntryImagePickerViewController: UITextViewDelegate {
-    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+    if textView.textColor == UIColor.lightGray && savedPhoto == nil {
+        textView.text = nil
+        textView.textColor = UIColor.black
+        formValidation()
+        }
     }
-
+}

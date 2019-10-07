@@ -10,9 +10,17 @@ import UIKit
 
 class JournalCell: UICollectionViewCell {
     
+    var buttonSelectedFunction: (()->())?
     
-        //MARK: - IBOutlets
-        @IBOutlet weak var journalImageView: UIImageView!
-        @IBOutlet weak var journalCaptionLabel: UILabel!
-        @IBOutlet weak var journalOptionButton: UIButton!
+    
+    //MARK: - Outlets & Action
+    @IBOutlet weak var journalImageView: UIImageView!
+    @IBOutlet weak var journalCaptionLabel: UILabel!
+    @IBOutlet weak var journalOptionButton: UIButton!
+    @IBOutlet weak var journalTimeStampLabel: UILabel!
+    @IBAction func journalOptionButtonSelected(_ sender: UIButton) {
+        if let closure = buttonSelectedFunction {
+            closure()
+        }
+    }
 }

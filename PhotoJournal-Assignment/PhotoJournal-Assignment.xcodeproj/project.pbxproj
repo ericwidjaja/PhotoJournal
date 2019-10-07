@@ -20,6 +20,7 @@
 		DF47E49D234AAA8F0041D6C8 /* PhotoJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */; };
 		DF47E4AA234ADA310041D6C8 /* JournalCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4A9234ADA310041D6C8 /* JournalCellCollectionViewCell.swift */; };
 		DF47E4AE234BBE330041D6C8 /* PhotoPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4AD234BBE330041D6C8 /* PhotoPersistence.swift */; };
+		DF47E4B2234BD29B0041D6C8 /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4B1234BD29B0041D6C8 /* protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournal.swift; sourceTree = "<group>"; };
 		DF47E4A9234ADA310041D6C8 /* JournalCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF47E4AD234BBE330041D6C8 /* PhotoPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPersistence.swift; sourceTree = "<group>"; };
+		DF47E4B1234BD29B0041D6C8 /* protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = protocol.swift; path = "PhotoJournal-Assignment/Supporting Files/protocol.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				DF47E46B23497EB60041D6C8 /* AppDelegate.swift */,
 				DF47E46D23497EB60041D6C8 /* SceneDelegate.swift */,
 				DF47E47923497EB70041D6C8 /* LaunchScreen.storyboard */,
+				DF47E4B1234BD29B0041D6C8 /* protocol.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				DF47E49B2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift in Sources */,
 				DF47E497234980950041D6C8 /* PersistenceHelper.swift in Sources */,
 				DF47E46E23497EB60041D6C8 /* SceneDelegate.swift in Sources */,
+				DF47E4B2234BD29B0041D6C8 /* protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
