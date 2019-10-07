@@ -13,21 +13,6 @@ class PhotoJournalViewController: UIViewController {
     //MARK: - IBOUtlets:
     
     @IBOutlet weak var photoJournalCollectionView: UICollectionView!
-  
-    @IBOutlet weak var noEntryView: UIView!
-    
-    private var photoJournals = [PhotoJournal]() {
-        didSet {
-            photoJournalCollectionView.reloadData()
-        }
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
-
+    
 }
-

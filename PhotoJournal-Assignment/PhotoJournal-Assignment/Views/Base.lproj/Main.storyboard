@@ -20,9 +20,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ri7-T1-vJg"/>
-                                    <barButtonItem title="Item" id="yVv-No-Qxv"/>
+                                    <barButtonItem systemItem="add" id="yVv-No-Qxv"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rmu-ZJ-AeN"/>
-                                    <barButtonItem title="Item" id="YLD-d9-j2v"/>
+                                    <barButtonItem image="gear" catalog="system" id="YLD-d9-j2v"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2eJ-mQ-y2U"/>
                                 </items>
                             </toolbar>
@@ -33,7 +33,7 @@
                                     <navigationItem title="Photo Journal Entries" id="yNF-hh-kCA"/>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BVt-PV-B5y" customClass="PhotoJournalCollectionView" customModule="PhotoJournal_Assignment" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BVt-PV-B5y" userLabel="photoJournalCollection View">
                                 <rect key="frame" x="0.0" y="100" width="414" height="592"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -44,7 +44,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ePU-3q-pcM" customClass="JournalCell" customModule="PhotoJournal_Assignment" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JournalCell" id="ePU-3q-pcM" customClass="JournalCell">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="604"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -63,13 +63,6 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Stamp Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOq-zR-nX4" userLabel="Time Stamp Label">
-                                                    <rect key="frame" x="19" y="465" width="375" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption Title Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCL-hg-cqb">
                                                     <rect key="frame" x="20" y="400" width="300" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -80,10 +73,9 @@
                                             </subviews>
                                         </view>
                                         <connections>
-                                            <outlet property="journalCaptionLabel" destination="pCL-hg-cqb" id="ibn-vx-Sj4"/>
-                                            <outlet property="journalImageView" destination="ic5-TR-x0n" id="rcI-Xm-Mfu"/>
-                                            <outlet property="journalOptionButton" destination="KiW-xD-XC5" id="inH-8y-9lv"/>
-                                            <outlet property="journalTimeStampLabel" destination="EOq-zR-nX4" id="uzA-aw-ED9"/>
+                                            <outlet property="journalCaptionLabel" destination="pCL-hg-cqb" id="lpi-jB-wVz"/>
+                                            <outlet property="journalImageView" destination="ic5-TR-x0n" id="fBh-B1-lh0"/>
+                                            <outlet property="journalOptionButton" destination="KiW-xD-XC5" id="1Im-uM-t5o"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -93,16 +85,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="noEntryView" destination="jPo-K4-TJh" id="yxn-xo-DUo"/>
+                        <outlet property="photoJournalCollectionView" destination="BVt-PV-B5y" id="yJI-Co-2bM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="jPo-K4-TJh" userLabel="No Entry View">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <viewLayoutGuide key="safeArea" id="Uhl-dw-C0k"/>
-                </view>
             </objects>
             <point key="canvasLocation" x="132" y="137"/>
         </scene>
@@ -119,8 +105,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Photo Journal Detail" id="UOv-Ji-WQ1">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0YQ-rZ-uKB"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tTu-60-fud"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0YQ-rZ-uKB">
+                                            <connections>
+                                                <action selector="cancelButtonSelected:" destination="31R-9n-NFs" id="6cl-J3-drj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tTu-60-fud">
+                                            <connections>
+                                                <action selector="saveButtonSelected:" destination="31R-9n-NFs" id="NNb-4Z-h7s"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -138,23 +132,33 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="j7E-Jh-teE"/>
-                                    <barButtonItem image="photo.on.rectangle" catalog="system" id="Law-XW-aq1"/>
+                                    <barButtonItem image="photo.on.rectangle" catalog="system" id="Law-XW-aq1">
+                                        <connections>
+                                            <action selector="photoLibraryaButtonSelected:" destination="31R-9n-NFs" id="kBa-2w-hdu"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6KE-aE-vMq"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="zRE-rx-fBK"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KHJ-O6-Gcc"/>
-                                    <barButtonItem style="plain" systemItem="camera" id="d7b-FJ-jtH"/>
+                                    <barButtonItem style="plain" systemItem="camera" id="d7b-FJ-jtH">
+                                        <connections>
+                                            <action selector="cameraButtonSelected:" destination="31R-9n-NFs" id="B61-De-LA6"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pqH-dV-vwD"/>
                                 </items>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ImageHolder" translatesAutoresizingMaskIntoConstraints="NO" id="4Wd-r5-sto">
+                                <rect key="frame" x="11" y="175" width="392" height="512"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="saD-gq-2Xb"/>
                     </view>
                     <connections>
-                        <outlet property="cameraButton" destination="d7b-FJ-jtH" id="hyX-ps-HlF"/>
-                        <outlet property="cancelButtonSelected" destination="0YQ-rZ-uKB" id="CX0-a9-yo5"/>
                         <outlet property="journalCaptionTextView" destination="1tl-2m-4I6" id="hj3-QG-omX"/>
-                        <outlet property="saveButtonSelected" destination="tTu-60-fud" id="ItZ-pj-BRx"/>
+                        <outlet property="journalPhoto" destination="4Wd-r5-sto" id="YP6-7Z-qsJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ml-Vy-ha7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -163,6 +167,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ImageHolder" width="100" height="100"/>
+        <image name="gear" catalog="system" width="64" height="60"/>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
     </resources>
 </document>

@@ -10,33 +10,37 @@ import UIKit
 
 class JournalEntryImagePickerViewController: UIViewController {
     
-    //MARK: - Setup IBOutlets
+    //MARK: - IBOutlets
     @IBOutlet weak var journalCaptionTextView: UITextView!
+    @IBOutlet weak var journalPhoto: UIImageView!
     
-    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    //MARK: - Properties
+    
+    var photoJournal: PhotoJournal?
+   
     
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
+    @IBAction func cancelButtonSelected(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBOutlet weak var cancelButtonSelected: UIBarButtonItem!
-    
-    @IBOutlet weak var saveButtonSelected: UIBarButtonItem!
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveButtonSelected(_ sender: UIBarButtonItem) {
+        
     }
-    */
-
+    @IBAction func cameraButtonSelected(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func photoLibraryaButtonSelected(_ sender: Any) {
+    }
+    
 }
+extension JournalEntryImagePickerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    }
+
+
+extension JournalEntryImagePickerViewController: UITextViewDelegate {
+    
+    }
+

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF47E46C23497EB60041D6C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E46B23497EB60041D6C8 /* AppDelegate.swift */; };
 		DF47E46E23497EB60041D6C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E46D23497EB60041D6C8 /* SceneDelegate.swift */; };
-		DF47E47023497EB60041D6C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E46F23497EB60041D6C8 /* ViewController.swift */; };
+		DF47E47023497EB60041D6C8 /* PhotoJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E46F23497EB60041D6C8 /* PhotoJournalViewController.swift */; };
 		DF47E47323497EB60041D6C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF47E47123497EB60041D6C8 /* Main.storyboard */; };
 		DF47E47623497EB60041D6C8 /* PhotoJournal_Assignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF47E47423497EB60041D6C8 /* PhotoJournal_Assignment.xcdatamodeld */; };
 		DF47E47823497EB70041D6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF47E47723497EB70041D6C8 /* Assets.xcassets */; };
@@ -18,8 +18,7 @@
 		DF47E497234980950041D6C8 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E496234980950041D6C8 /* PersistenceHelper.swift */; };
 		DF47E49B2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E49A2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift */; };
 		DF47E49D234AAA8F0041D6C8 /* PhotoJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */; };
-		DF47E4A4234AAE290041D6C8 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4A3234AAE290041D6C8 /* JournalCell.swift */; };
-		DF47E4A6234AAFC30041D6C8 /* PhotoJournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4A5234AAFC30041D6C8 /* PhotoJournalModel.swift */; };
+		DF47E4AA234ADA310041D6C8 /* JournalCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4A9234ADA310041D6C8 /* JournalCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +35,7 @@
 		DF47E46823497EB60041D6C8 /* PhotoJournal-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhotoJournal-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF47E46B23497EB60041D6C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF47E46D23497EB60041D6C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DF47E46F23497EB60041D6C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF47E46F23497EB60041D6C8 /* PhotoJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournalViewController.swift; sourceTree = "<group>"; };
 		DF47E47223497EB60041D6C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF47E47523497EB60041D6C8 /* PhotoJournal_Assignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotoJournal_Assignment.xcdatamodel; sourceTree = "<group>"; };
 		DF47E47723497EB70041D6C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,8 +47,7 @@
 		DF47E496234980950041D6C8 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		DF47E49A2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryImagePickerViewController.swift; sourceTree = "<group>"; };
 		DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournal.swift; sourceTree = "<group>"; };
-		DF47E4A3234AAE290041D6C8 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
-		DF47E4A5234AAFC30041D6C8 /* PhotoJournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournalModel.swift; sourceTree = "<group>"; };
+		DF47E4A9234ADA310041D6C8 /* JournalCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +113,7 @@
 		DF47E49023497ECB0041D6C8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DF47E46F23497EB60041D6C8 /* ViewController.swift */,
+				DF47E46F23497EB60041D6C8 /* PhotoJournalViewController.swift */,
 				DF47E49A2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift */,
 			);
 			path = Controllers;
@@ -151,8 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */,
-				DF47E4A3234AAE290041D6C8 /* JournalCell.swift */,
-				DF47E4A5234AAFC30041D6C8 /* PhotoJournalModel.swift */,
+				DF47E4A9234ADA310041D6C8 /* JournalCellCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,15 +255,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF47E47023497EB60041D6C8 /* ViewController.swift in Sources */,
+				DF47E47023497EB60041D6C8 /* PhotoJournalViewController.swift in Sources */,
 				DF47E49D234AAA8F0041D6C8 /* PhotoJournal.swift in Sources */,
 				DF47E47623497EB60041D6C8 /* PhotoJournal_Assignment.xcdatamodeld in Sources */,
 				DF47E46C23497EB60041D6C8 /* AppDelegate.swift in Sources */,
+				DF47E4AA234ADA310041D6C8 /* JournalCellCollectionViewCell.swift in Sources */,
 				DF47E49B2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift in Sources */,
 				DF47E497234980950041D6C8 /* PersistenceHelper.swift in Sources */,
 				DF47E46E23497EB60041D6C8 /* SceneDelegate.swift in Sources */,
-				DF47E4A6234AAFC30041D6C8 /* PhotoJournalModel.swift in Sources */,
-				DF47E4A4234AAE290041D6C8 /* JournalCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
