@@ -10,9 +10,10 @@ import UIKit
 
 class JournalEntryImagePickerViewController: UIViewController {
     
-    
+    //MARK: - Setup IBOutlets
     @IBOutlet weak var journalCaptionTextView: UITextView!
     
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     
     
@@ -20,8 +21,12 @@ class JournalEntryImagePickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
+    
+    
+    @IBOutlet weak var cancelButtonSelected: UIBarButtonItem!
+    
+    @IBOutlet weak var saveButtonSelected: UIBarButtonItem!
     
 
     /*

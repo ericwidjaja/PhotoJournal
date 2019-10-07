@@ -17,6 +17,9 @@
 		DF47E48623497EB70041D6C8 /* PhotoJournal_AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E48523497EB70041D6C8 /* PhotoJournal_AssignmentTests.swift */; };
 		DF47E497234980950041D6C8 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E496234980950041D6C8 /* PersistenceHelper.swift */; };
 		DF47E49B2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E49A2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift */; };
+		DF47E49D234AAA8F0041D6C8 /* PhotoJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */; };
+		DF47E4A4234AAE290041D6C8 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4A3234AAE290041D6C8 /* JournalCell.swift */; };
+		DF47E4A6234AAFC30041D6C8 /* PhotoJournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4A5234AAFC30041D6C8 /* PhotoJournalModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		DF47E48723497EB70041D6C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF47E496234980950041D6C8 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		DF47E49A2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryImagePickerViewController.swift; sourceTree = "<group>"; };
+		DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournal.swift; sourceTree = "<group>"; };
+		DF47E4A3234AAE290041D6C8 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
+		DF47E4A5234AAFC30041D6C8 /* PhotoJournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		DF47E46A23497EB60041D6C8 /* PhotoJournal-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				DF47E49E234AAABF0041D6C8 /* Model */,
 				DF47E49123497EDD0041D6C8 /* Views */,
 				DF47E49023497ECB0041D6C8 /* Controllers */,
 				DF47E49523497FCF0041D6C8 /* PersistenceHelper */,
@@ -138,6 +145,16 @@
 				DF47E496234980950041D6C8 /* PersistenceHelper.swift */,
 			);
 			path = PersistenceHelper;
+			sourceTree = "<group>";
+		};
+		DF47E49E234AAABF0041D6C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF47E49C234AAA8F0041D6C8 /* PhotoJournal.swift */,
+				DF47E4A3234AAE290041D6C8 /* JournalCell.swift */,
+				DF47E4A5234AAFC30041D6C8 /* PhotoJournalModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,11 +259,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF47E47023497EB60041D6C8 /* ViewController.swift in Sources */,
+				DF47E49D234AAA8F0041D6C8 /* PhotoJournal.swift in Sources */,
 				DF47E47623497EB60041D6C8 /* PhotoJournal_Assignment.xcdatamodeld in Sources */,
 				DF47E46C23497EB60041D6C8 /* AppDelegate.swift in Sources */,
 				DF47E49B2349991C0041D6C8 /* JournalEntryImagePickerViewController.swift in Sources */,
 				DF47E497234980950041D6C8 /* PersistenceHelper.swift in Sources */,
 				DF47E46E23497EB60041D6C8 /* SceneDelegate.swift in Sources */,
+				DF47E4A6234AAFC30041D6C8 /* PhotoJournalModel.swift in Sources */,
+				DF47E4A4234AAE290041D6C8 /* JournalCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
