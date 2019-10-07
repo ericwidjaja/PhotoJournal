@@ -33,7 +33,7 @@ class JournalEntryImagePickerViewController: UIViewController {
             journalCaptionTextView.text = savedPhoto.caption
             let image = UIImage(data: savedPhoto.imageData)
             journalPhoto.image = image
-            formValidation()
+            //formValidation()
         }
     }
    
