@@ -9,10 +9,11 @@
 import Foundation
 
 struct PhotoJournal: Codable {
-    let id: Int
+
     let caption: String
     let imageData: Data
     let timeStamp: String
+    var id: Int
     
     static func getIDForNewPhoto() -> Int {
          do {
@@ -26,14 +27,13 @@ struct PhotoJournal: Codable {
      }
     static func getTime() -> String {
          
-         let now = Date()
+         let currentDate = Date()
          let formatter = DateFormatter()
-         formatter.timeZone = TimeZone.current
+         
          formatter.dateFormat = "MMM d, yyyy h:mm a"
 
-         return formatter.string(from: now)
+         return formatter.string(from: currentDate)
      }
-         
      init(id: Int, caption: String, imageData: Data) {
          self.id = id
          self.caption = caption

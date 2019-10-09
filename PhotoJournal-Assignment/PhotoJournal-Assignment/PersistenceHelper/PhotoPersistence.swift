@@ -9,9 +9,12 @@
 import Foundation
 
 struct PhotoPersistenceHelper {
+    
+    private init() {}
+    
     static let manager = PhotoPersistenceHelper()
     
-    func save(newPhoto: PhotoJournal) throws {
+    func savePhoto(newPhoto: PhotoJournal) throws {
         try persistenceHelper.save(newElement: newPhoto)
     }
     
@@ -36,7 +39,5 @@ struct PhotoPersistenceHelper {
         }
     }
     
-    private let persistenceHelper = PersistenceHelper<PhotoJournal>(fileName: "photos.plist")
-    
-    private init() {}
+    private let persistenceHelper = PersistenceHelper<PhotoJournal>(fileName: "allphotos.plist")
 }
