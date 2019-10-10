@@ -138,6 +138,79 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="EMe-Go-lS6">
+            <objects>
+                <viewController title="Settings View Controller" id="hmm-3Z-Fs8" customClass="SettingsViewController" customModule="PhotoJournal_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="olk-K2-ibK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NKa-kN-lng">
+                                <rect key="frame" x="143" y="356" width="128" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xg9-u3-Bi7">
+                                <rect key="frame" x="142" y="537" width="150" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S E T T I NG S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl4-Ab-gUD">
+                                <rect key="frame" x="140" y="124" width="134" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="JlS-mi-N5W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvU-LJ-df1">
+                                <rect key="frame" x="107" y="316" width="200" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll Orientation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duo-Ud-TZZ">
+                                <rect key="frame" x="82" y="499" width="250" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kl4-Ab-gUD" firstAttribute="centerX" secondItem="tJ9-Qf-sVi" secondAttribute="centerX" id="1dG-S3-81B"/>
+                            <constraint firstItem="qvU-LJ-df1" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="107" id="3XF-5t-5oU"/>
+                            <constraint firstItem="NKa-kN-lng" firstAttribute="centerX" secondItem="tJ9-Qf-sVi" secondAttribute="centerX" id="Bnk-Oh-dCC"/>
+                            <constraint firstItem="duo-Ud-TZZ" firstAttribute="centerX" secondItem="tJ9-Qf-sVi" secondAttribute="centerX" id="Gmo-Pw-6sE"/>
+                            <constraint firstItem="duo-Ud-TZZ" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="82" id="ISk-3T-yaK"/>
+                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="Xg9-u3-Bi7" secondAttribute="trailing" constant="122" id="Unz-Nn-IbA"/>
+                            <constraint firstItem="qvU-LJ-df1" firstAttribute="top" secondItem="kl4-Ab-gUD" secondAttribute="bottom" constant="150" id="WgP-RZ-dVL"/>
+                            <constraint firstItem="kl4-Ab-gUD" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="140" id="aWH-Ho-oxM"/>
+                            <constraint firstItem="NKa-kN-lng" firstAttribute="top" secondItem="qvU-LJ-df1" secondAttribute="bottom" constant="19" id="cyB-M3-NO2"/>
+                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="qvU-LJ-df1" secondAttribute="trailing" constant="107" id="kUG-AS-Afy"/>
+                            <constraint firstItem="NKa-kN-lng" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="143" id="pUo-6n-61h"/>
+                            <constraint firstItem="kl4-Ab-gUD" firstAttribute="top" secondItem="tJ9-Qf-sVi" secondAttribute="top" constant="80" id="sPc-RI-zWU"/>
+                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="bottom" secondItem="Xg9-u3-Bi7" secondAttribute="bottom" constant="294" id="vtR-41-GFh"/>
+                            <constraint firstItem="Xg9-u3-Bi7" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="142" id="xEx-ug-XVR"/>
+                            <constraint firstItem="Xg9-u3-Bi7" firstAttribute="top" secondItem="duo-Ud-TZZ" secondAttribute="bottom" constant="17" id="zOx-bx-wiG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tJ9-Qf-sVi"/>
+                    </view>
+                    <connections>
+                        <outlet property="darkModeOn" destination="NKa-kN-lng" id="RLO-gZ-8zj"/>
+                        <outlet property="scrollHorizontalOff" destination="Xg9-u3-Bi7" id="Fir-oh-NPY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bp4-th-FRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.34782608695662" y="139.95535714285714"/>
+        </scene>
         <!--Journal Entry Image Picker View Controller-->
         <scene sceneID="ih3-Ri-W1D">
             <objects>
