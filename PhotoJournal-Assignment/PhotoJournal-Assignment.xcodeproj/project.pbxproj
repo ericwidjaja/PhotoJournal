@@ -22,6 +22,7 @@
 		DF47E4AE234BBE330041D6C8 /* PhotoPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4AD234BBE330041D6C8 /* PhotoPersistence.swift */; };
 		DF47E4B2234BD29B0041D6C8 /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF47E4B1234BD29B0041D6C8 /* protocol.swift */; };
 		DFAD8170234FCDB200ABE1C7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD816F234FCDB200ABE1C7 /* SettingsViewController.swift */; };
+		DFAD8172234FFC2700ABE1C7 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD8171234FFC2700ABE1C7 /* UserDefaultWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		DF47E4AD234BBE330041D6C8 /* PhotoPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPersistence.swift; sourceTree = "<group>"; };
 		DF47E4B1234BD29B0041D6C8 /* protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = protocol.swift; path = "PhotoJournal-Assignment/Supporting Files/protocol.swift"; sourceTree = SOURCE_ROOT; };
 		DFAD816F234FCDB200ABE1C7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "PhotoJournal-Assignment/Controllers/SettingsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		DFAD8171234FFC2700ABE1C7 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultWrapper.swift; path = "PhotoJournal-Assignment/PersistenceHelper/UserDefaultWrapper.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				DF47E496234980950041D6C8 /* PersistenceHelper.swift */,
 				DF47E4AD234BBE330041D6C8 /* PhotoPersistence.swift */,
+				DFAD8171234FFC2700ABE1C7 /* UserDefaultWrapper.swift */,
 			);
 			path = PersistenceHelper;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFAD8172234FFC2700ABE1C7 /* UserDefaultWrapper.swift in Sources */,
 				DF47E47023497EB60041D6C8 /* PhotoJournalViewController.swift in Sources */,
 				DF47E49D234AAA8F0041D6C8 /* PhotoJournal.swift in Sources */,
 				DFAD8170234FCDB200ABE1C7 /* SettingsViewController.swift in Sources */,

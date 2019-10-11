@@ -17,6 +17,7 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UR1-6Y-63e">
                                 <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="uie-i2-4eW"/>
                                 </constraints>
@@ -28,14 +29,20 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rmu-ZJ-AeN"/>
-                                    <barButtonItem image="gear" catalog="system" id="YLD-d9-j2v"/>
+                                    <barButtonItem image="gear" catalog="system" id="YLD-d9-j2v">
+                                        <connections>
+                                            <action selector="settingButton:" destination="BYZ-38-t0r" id="2yK-qs-aL7"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2eJ-mQ-y2U"/>
                                 </items>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0K-Rw-Pr0">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Photo Journal Entries" id="yNF-hh-kCA"/>
+                                    <navigationItem title="Photo Journal Entries" largeTitleDisplayMode="always" id="yNF-hh-kCA"/>
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BVt-PV-B5y" userLabel="photoJournalCollection View">
@@ -141,24 +148,33 @@
         <!--Settings View Controller-->
         <scene sceneID="EMe-Go-lS6">
             <objects>
-                <viewController title="Settings View Controller" id="hmm-3Z-Fs8" customClass="SettingsViewController" customModule="PhotoJournal_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsVC" title="Settings View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hmm-3Z-Fs8" customClass="SettingsViewController" customModule="PhotoJournal_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="olk-K2-ibK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NKa-kN-lng">
-                                <rect key="frame" x="143" y="356" width="128" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="NKa-kN-lng">
+                                <rect key="frame" x="143" y="364.5" width="128" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Gray"/>
+                                    <segment title="Dark"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="darkModeSegment:" destination="hmm-3Z-Fs8" eventType="valueChanged" id="zUB-ZC-5S8"/>
+                                </connections>
                             </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xg9-u3-Bi7">
-                                <rect key="frame" x="142" y="537" width="150" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xg9-u3-Bi7">
+                                <rect key="frame" x="132" y="537" width="150" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="" image="arrow.up.arrow.down.square" catalog="system"/>
+                                    <segment title="" image="arrow.right.arrow.left.square" catalog="system"/>
                                 </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="scrollButton:" destination="hmm-3Z-Fs8" eventType="valueChanged" id="lVJ-43-QSz"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S E T T I NG S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl4-Ab-gUD">
                                 <rect key="frame" x="140" y="124" width="134" height="42"/>
@@ -166,45 +182,74 @@
                                     <constraint firstAttribute="height" constant="42" id="JlS-mi-N5W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvU-LJ-df1">
-                                <rect key="frame" x="107" y="316" width="200" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="107" y="316" width="200" height="29.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="-2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll Orientation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duo-Ud-TZZ">
-                                <rect key="frame" x="82" y="499" width="250" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="82" y="491.5" width="250" height="28.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="-2"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fh-p4-Xhm">
+                                <rect key="frame" x="165" y="791" width="84" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="PfD-mI-NFL"/>
+                                    <constraint firstAttribute="height" constant="50" id="U1W-JL-TuC"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="arrowshape.turn.up.left.2.fill" catalog="system">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" weight="semibold"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="hmm-3Z-Fs8" eventType="touchUpInside" id="bw1-j8-fX4"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.81048410400000004" green="0.81048410400000004" blue="0.81048410400000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="kl4-Ab-gUD" firstAttribute="centerX" secondItem="tJ9-Qf-sVi" secondAttribute="centerX" id="1dG-S3-81B"/>
                             <constraint firstItem="qvU-LJ-df1" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="107" id="3XF-5t-5oU"/>
+                            <constraint firstItem="Xg9-u3-Bi7" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="132" id="6Qg-mc-lll"/>
                             <constraint firstItem="NKa-kN-lng" firstAttribute="centerX" secondItem="tJ9-Qf-sVi" secondAttribute="centerX" id="Bnk-Oh-dCC"/>
                             <constraint firstItem="duo-Ud-TZZ" firstAttribute="centerX" secondItem="tJ9-Qf-sVi" secondAttribute="centerX" id="Gmo-Pw-6sE"/>
                             <constraint firstItem="duo-Ud-TZZ" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="82" id="ISk-3T-yaK"/>
-                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="Xg9-u3-Bi7" secondAttribute="trailing" constant="122" id="Unz-Nn-IbA"/>
                             <constraint firstItem="qvU-LJ-df1" firstAttribute="top" secondItem="kl4-Ab-gUD" secondAttribute="bottom" constant="150" id="WgP-RZ-dVL"/>
+                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="9Fh-p4-Xhm" secondAttribute="trailing" constant="165" id="ZXb-hP-drS"/>
                             <constraint firstItem="kl4-Ab-gUD" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="140" id="aWH-Ho-oxM"/>
                             <constraint firstItem="NKa-kN-lng" firstAttribute="top" secondItem="qvU-LJ-df1" secondAttribute="bottom" constant="19" id="cyB-M3-NO2"/>
+                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="Xg9-u3-Bi7" secondAttribute="trailing" constant="132" id="gG6-DU-6xr"/>
                             <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="qvU-LJ-df1" secondAttribute="trailing" constant="107" id="kUG-AS-Afy"/>
+                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="bottom" secondItem="9Fh-p4-Xhm" secondAttribute="bottom" constant="21" id="ohR-kc-NKt"/>
                             <constraint firstItem="NKa-kN-lng" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="143" id="pUo-6n-61h"/>
                             <constraint firstItem="kl4-Ab-gUD" firstAttribute="top" secondItem="tJ9-Qf-sVi" secondAttribute="top" constant="80" id="sPc-RI-zWU"/>
+                            <constraint firstItem="9Fh-p4-Xhm" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="165" id="vN0-Un-XHV"/>
                             <constraint firstItem="tJ9-Qf-sVi" firstAttribute="bottom" secondItem="Xg9-u3-Bi7" secondAttribute="bottom" constant="294" id="vtR-41-GFh"/>
-                            <constraint firstItem="Xg9-u3-Bi7" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="142" id="xEx-ug-XVR"/>
                             <constraint firstItem="Xg9-u3-Bi7" firstAttribute="top" secondItem="duo-Ud-TZZ" secondAttribute="bottom" constant="17" id="zOx-bx-wiG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tJ9-Qf-sVi"/>
                     </view>
                     <connections>
+                        <outlet property="darkModeLabel" destination="qvU-LJ-df1" id="WcQ-kZ-3dA"/>
                         <outlet property="darkModeOn" destination="NKa-kN-lng" id="RLO-gZ-8zj"/>
                         <outlet property="scrollHorizontalOff" destination="Xg9-u3-Bi7" id="Fir-oh-NPY"/>
+                        <outlet property="scrollOrientationLabel" destination="duo-Ud-TZZ" id="fIG-Ho-GUJ"/>
+                        <outlet property="settingsLabel" destination="kl4-Ab-gUD" id="Ln5-91-raG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bp4-th-FRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -308,6 +353,9 @@
     </scenes>
     <resources>
         <image name="ImageHolder" width="100" height="100"/>
+        <image name="arrow.right.arrow.left.square" catalog="system" width="64" height="56"/>
+        <image name="arrow.up.arrow.down.square" catalog="system" width="64" height="56"/>
+        <image name="arrowshape.turn.up.left.2.fill" catalog="system" width="64" height="42"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
     </resources>

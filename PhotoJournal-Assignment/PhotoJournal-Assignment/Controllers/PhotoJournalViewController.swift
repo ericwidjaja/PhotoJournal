@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoJournalViewController: UIViewController {
     
-    //MARK: - Property
+    //MARK: - Properties
     private var photos = [PhotoJournal]() {
         didSet {
             DispatchQueue.main.async {
@@ -18,8 +18,8 @@ class PhotoJournalViewController: UIViewController {
             }
         }
     }
-    
-    
+    private var scrollDirection = Int()
+    private var darkModeId = Int()
     
     //MARK: - OUtlets:
     
@@ -29,9 +29,19 @@ class PhotoJournalViewController: UIViewController {
     
     let storyboard = UIStoryboard(name: "Main", bundle:nil)
     let AddJournalEntryVC = storyboard.instantiateViewController(withIdentifier: "addJournalEntryVC") as! JournalEntryImagePickerViewController
-    
+        
         AddJournalEntryVC.delegate = self
         self.present(AddJournalEntryVC, animated: true, completion: nil)
+    }
+    @IBAction func settingButton(_ sender: UIBarButtonItem) {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let settingVC = storyBoard.instantiateViewController(identifier: "settingsVC") as! SettingsViewController
+        settingVC.delegate = self
+        settingVC.darkDelegate = self
+        settingVC.darkModeInt = darkModeId
+        settingVC.selectedScroll = scrollDirection
+        settingVC.modalPresentationStyle = .currentContext
+        self.present(settingVC, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -104,3 +114,28 @@ extension PhotoJournalViewController: LoadDataDelegate {
         }
     }
 }
+extension PhotoJournalViewController: PhotoDelegate{
+    func passData(tag: Int) {
+        print(tag)
+        scrollDirection = tag
+        if let layout = photoJournalCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            if tag == 0 {
+                layout.scrollDirection = .vertical
+            }else { layout.scrollDirection = .horizontal
+            }
+        }
+        photoJournalCollectionView.reloadData()
+    }
+}
+extension PhotoJournalViewController: darkProtocol{
+    func passDarkModeData(tag: Int) {
+        darkModeId = tag
+        if tag == 0{
+            view.backgroundColor = .lightGray
+        }else {
+            view.backgroundColor = .black
+        }
+    }
+    
+}
+

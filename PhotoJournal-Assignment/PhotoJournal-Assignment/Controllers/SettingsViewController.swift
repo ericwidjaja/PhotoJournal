@@ -18,15 +18,58 @@ class SettingsViewController: UIViewController {
     weak var darkDelegate: darkProtocol?
     
     
+    @IBOutlet weak var settingsLabel: UILabel!
+    
+    @IBOutlet weak var darkModeLabel: UILabel!
+    
     @IBOutlet weak var darkModeOn: UISegmentedControl!
     
+    @IBOutlet weak var scrollOrientationLabel: UILabel!
     @IBOutlet weak var scrollHorizontalOff: UISegmentedControl!
     
-
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+            super.viewDidLoad()
+            loadUsersDefaultMode()
+        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        darkModeOn.selectedSegmentIndex = darkModeInt
+        scrollHorizontalOff.selectedSegmentIndex = selectedScroll
+        changeBackGround()
     }
+    private func loadUsersDefaultMode(){
+        if let mode = UserDefaultWrapper.manager.getDarkMode(){
+           changeBackGround()
+            darkModeOn.selectedSegmentIndex = mode
+           }
+       }
+    func darkMode(){
+        view.backgroundColor = .black
+        darkModeLabel.textColor = .white
+        scrollOrientationLabel.textColor = .white
+        settingsLabel.textColor = .white
+    }
+    func grayMode(){
+        view.backgroundColor = .lightGray
+        darkModeLabel.textColor = .black
+        scrollOrientationLabel.textColor = .black
+    }
+        @IBAction func darkModeSegment(_ sender: UISegmentedControl) {
+            darkDelegate?.passDarkModeData(tag: sender.selectedSegmentIndex)
+                darkModeInt = sender.selectedSegmentIndex
+            UserDefaultWrapper.manager.store(mode: darkModeInt)
+            changeBackGround()
+        }
 
-}
+        func changeBackGround(){
+            if darkModeInt == 0{
+                grayMode()
+            }else {darkMode()}
+        }
+        @IBAction func scrollButton(_ sender: UISegmentedControl) {
+            delegate?.passData(tag: sender.selectedSegmentIndex)
+        }
+        @IBAction func backButton(_ sender: UIButton) {
+            dismiss(animated: true, completion: nil)
+        }
+    }
