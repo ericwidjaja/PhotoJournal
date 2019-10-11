@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
     weak var delegate: PhotoDelegate?
     weak var darkDelegate: darkProtocol?
     
-    
+    //MARK: -IBOutlets
     @IBOutlet weak var settingsLabel: UILabel!
     
     @IBOutlet weak var darkModeLabel: UILabel!
@@ -54,25 +54,26 @@ class SettingsViewController: UIViewController {
         view.backgroundColor = .lightGray
         darkModeLabel.textColor = .black
         scrollOrientationLabel.textColor = .black
+        settingsLabel.textColor = .blue
     }
     
-        @IBAction func darkModeSegment(_ sender: UISegmentedControl) {
-            darkDelegate?.passDarkModeData(tag: sender.selectedSegmentIndex)
-                darkModeInt = sender.selectedSegmentIndex
-            UserDefaultWrapper.manager.store(mode: darkModeInt)
-            changeBackGround()
-        }
+    @IBAction func darkModeSegment(_ sender: UISegmentedControl) {
+        darkDelegate?.passDarkModeData(tag: sender.selectedSegmentIndex)
+            darkModeInt = sender.selectedSegmentIndex
+        UserDefaultWrapper.manager.store(mode: darkModeInt)
+        changeBackGround()
+    }
 
-        func changeBackGround(){
-            if darkModeInt == 0{
-                grayMode()
-            }else {darkMode()}
-        }
-    
-        @IBAction func scrollButton(_ sender: UISegmentedControl) {
-            delegate?.passData(tag: sender.selectedSegmentIndex)
-        }
-        @IBAction func backButton(_ sender: UIButton) {
-            dismiss(animated: true, completion: nil)
-        }
+    func changeBackGround() {
+        if darkModeInt == 0 {
+            grayMode()
+        } else {darkMode()}
     }
+
+    @IBAction func scrollButton(_ sender: UISegmentedControl) {
+        delegate?.passData(tag: sender.selectedSegmentIndex)
+    }
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+}

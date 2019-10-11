@@ -18,19 +18,21 @@ class PhotoJournalViewController: UIViewController {
             }
         }
     }
-    private var scrollDirection = Int()
-    private var darkModeId = Int()
+    
     private var backGroundColor = UIColor(red: 218, green: 222, blue: 218, alpha: 1)
     private var textColor: UIColor?
+    private var scrollDirection = Int()
+    private var darkModeId = Int()
+
     
     //MARK: - OUtlets:
     
     @IBOutlet weak var photoJournalCollectionView: UICollectionView!
     
     @IBAction func pushToJournalEntryVC(_ sender: UIBarButtonItem) {
-    
-    let storyboard = UIStoryboard(name: "Main", bundle:nil)
-    let AddJournalEntryVC = storyboard.instantiateViewController(withIdentifier: "addJournalEntryVC") as! JournalEntryImagePickerViewController
+        
+        let storyboard = UIStoryboard(name: "Main", bundle:nil)
+        let AddJournalEntryVC = storyboard.instantiateViewController(withIdentifier: "addJournalEntryVC") as! JournalEntryImagePickerViewController
         
         AddJournalEntryVC.delegate = self
         self.present(AddJournalEntryVC, animated: true, completion: nil)
@@ -49,28 +51,29 @@ class PhotoJournalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         photoJournalCollectionView.dataSource = self
-//        settingsMode()
+        //        settingsMode()
         for photo in photos {
             print("Name: \(photos.description), ID:\(photo.id)")
         }
-   }
-
+        photoJournalCollectionView.backgroundColor = .clear
+    }
+    
     //MARK: - Methods - ActionSheet
     func presentsActionSheet(id: Int, photo: PhotoJournal){
         let editAction = UIAlertAction(title: "Edit Caption", style: .default, handler:{ (action) in
             
-        let storyboard = UIStoryboard.init(name: "Main", bundle:nil)
-        let addJournalEntryVC = storyboard.instantiateViewController(withIdentifier: "addJournalEntryVC") as! JournalEntryImagePickerViewController
-        
-        addJournalEntryVC.savedPhoto = photo
-        addJournalEntryVC.delegate = self
-        self.present(addJournalEntryVC, animated: true, completion: nil)
+            let storyboard = UIStoryboard.init(name: "Main", bundle:nil)
+            let addJournalEntryVC = storyboard.instantiateViewController(withIdentifier: "addJournalEntryVC") as! JournalEntryImagePickerViewController
+            
+            addJournalEntryVC.savedPhoto = photo
+            addJournalEntryVC.delegate = self
+            self.present(addJournalEntryVC, animated: true, completion: nil)
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
             self.deletePhoto(with: id)
-        
+            
         })
         
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -89,7 +92,7 @@ class PhotoJournalViewController: UIViewController {
         } catch {}
     }
     override func viewWillAppear(_ animated: Bool) {
-      loadData()
+        loadData()
     }
 }
 
@@ -99,7 +102,7 @@ extension PhotoJournalViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-                
+        
         guard let cell = photoJournalCollectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? JournalCell else {
             return UICollectionViewCell()
         }
@@ -112,6 +115,16 @@ extension PhotoJournalViewController: UICollectionViewDataSource {
         cell.buttonSelectedFunction = {
             self.presentsActionSheet(id: photo.id, photo: photo)
         }
+        
+        if darkModeId == 0 { //in light(gray) mode
+            cell.journalOptionButton.tintColor = .black
+            [cell.journalCaptionLabel, cell.journalTimeStampLabel].forEach{$0?.textColor = .black }
+            
+        } else { // in dark mode
+            cell.journalOptionButton.tintColor = .white
+            [cell.journalCaptionLabel, cell.journalTimeStampLabel].forEach{$0?.textColor = .white }
+        }
+        
         return cell
     }
 }
@@ -149,35 +162,10 @@ extension PhotoJournalViewController: darkProtocol{
     func passDarkModeData(tag: Int) {
         darkModeId = tag
         if tag == 0{
+            
             view.backgroundColor = .lightGray
         }else {
             view.backgroundColor = .black
         }
     }
-    
 }
-
-//extension PhotoJournalViewController {
-//
-//private func settingsMode(){
-//    let mode = UserDefaultWrapper.manager.getDarkMode()
-//    switch mode{
-//        
-//    case 0:
-//        self.photoJournalCollectionView.backgroundColor =  UIColor.lightGray
-//        self.backGroundColor = UIColor.lightGray
-//        self.textColor = UIColor.blue
-//        
-//    case 1:
-//        self.photoJournalCollectionView.backgroundColor = UIColor.black
-//        self.backGroundColor = UIColor.black
-//        self.textColor = UIColor.white
-//        
-//    default:
-//        self.photoJournalCollectionView.backgroundColor = UIColor.darkGray
-//        self.backGroundColor = UIColor.lightGray
-//        self.textColor = UIColor.black
-//        }
-//    }
-//}
-

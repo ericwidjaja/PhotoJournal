@@ -40,14 +40,8 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0K-Rw-Pr0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Photo Journal Entries" largeTitleDisplayMode="always" id="yNF-hh-kCA"/>
-                                </items>
-                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BVt-PV-B5y" userLabel="photoJournalCollection View">
-                                <rect key="frame" x="0.0" y="100" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="106" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="718" id="Tgj-gj-CuN"/>
@@ -75,9 +69,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-xD-XC5" userLabel="Journal Options Button">
                                                     <rect key="frame" x="343" y="271" width="51" height="35"/>
                                                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                                                    <state key="normal" title="• • •">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
+                                                    <state key="normal" title="• • •"/>
                                                     <connections>
                                                         <action selector="journalOptionButtonSelected:" destination="ePU-3q-pcM" eventType="touchUpInside" id="tza-kT-4Lb"/>
                                                     </connections>
@@ -132,13 +124,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0K-Rw-Pr0">
+                                <rect key="frame" x="0.0" y="56" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zxx-oz-UIK"/>
+                                </constraints>
+                                <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Photo Journal Entries" largeTitleDisplayMode="always" id="yNF-hh-kCA"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BVt-PV-B5y" firstAttribute="trailing" secondItem="UR1-6Y-63e" secondAttribute="trailing" id="1Vs-Zw-dko"/>
-                            <constraint firstItem="BVt-PV-B5y" firstAttribute="top" secondItem="g0K-Rw-Pr0" secondAttribute="bottom" constant="12" id="3eJ-yk-xXo"/>
+                            <constraint firstItem="BVt-PV-B5y" firstAttribute="top" secondItem="g0K-Rw-Pr0" secondAttribute="bottom" id="3eJ-yk-xXo"/>
                             <constraint firstItem="g0K-Rw-Pr0" firstAttribute="trailing" secondItem="BVt-PV-B5y" secondAttribute="trailing" id="Hkl-CW-xyl"/>
-                            <constraint firstItem="g0K-Rw-Pr0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OJu-QZ-2zg"/>
+                            <constraint firstItem="g0K-Rw-Pr0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="OJu-QZ-2zg"/>
                             <constraint firstItem="BVt-PV-B5y" firstAttribute="leading" secondItem="UR1-6Y-63e" secondAttribute="leading" id="Pv0-WE-e8d"/>
                             <constraint firstItem="g0K-Rw-Pr0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RM6-fV-1xG"/>
                             <constraint firstItem="g0K-Rw-Pr0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tzp-Bv-u3q"/>
