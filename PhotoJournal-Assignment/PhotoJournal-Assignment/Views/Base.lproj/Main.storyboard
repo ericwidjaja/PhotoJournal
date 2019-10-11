@@ -122,12 +122,13 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Hxw-CE-sQM">
-                                        <rect key="frame" x="0.0" y="360" width="414" height="350"/>
+                                        <rect key="frame" x="0.0" y="360" width="414" height="360"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9X2-1z-QAj">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="360"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -213,16 +214,16 @@
                                 <size key="shadowOffset" width="0.0" height="-2"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fh-p4-Xhm">
-                                <rect key="frame" x="165" y="791" width="84" height="50"/>
+                                <rect key="frame" x="165" y="791" width="94" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="84" id="PfD-mI-NFL"/>
+                                    <constraint firstAttribute="width" constant="94" id="PfD-mI-NFL"/>
                                     <constraint firstAttribute="height" constant="50" id="U1W-JL-TuC"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="arrowshape.turn.up.left.2.fill" catalog="system">
-                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" weight="semibold"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40" weight="semibold"/>
                                 </state>
                                 <connections>
                                     <action selector="backButton:" destination="hmm-3Z-Fs8" eventType="touchUpInside" id="bw1-j8-fX4"/>
@@ -239,7 +240,7 @@
                             <constraint firstItem="duo-Ud-TZZ" firstAttribute="centerX" secondItem="tJ9-Qf-sVi" secondAttribute="centerX" id="Gmo-Pw-6sE"/>
                             <constraint firstItem="duo-Ud-TZZ" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="82" id="ISk-3T-yaK"/>
                             <constraint firstItem="qvU-LJ-df1" firstAttribute="top" secondItem="kl4-Ab-gUD" secondAttribute="bottom" constant="150" id="WgP-RZ-dVL"/>
-                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="9Fh-p4-Xhm" secondAttribute="trailing" constant="165" id="ZXb-hP-drS"/>
+                            <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="9Fh-p4-Xhm" secondAttribute="trailing" constant="155" id="ZXb-hP-drS"/>
                             <constraint firstItem="kl4-Ab-gUD" firstAttribute="leading" secondItem="tJ9-Qf-sVi" secondAttribute="leading" constant="140" id="aWH-Ho-oxM"/>
                             <constraint firstItem="NKa-kN-lng" firstAttribute="top" secondItem="qvU-LJ-df1" secondAttribute="bottom" constant="19" id="cyB-M3-NO2"/>
                             <constraint firstItem="tJ9-Qf-sVi" firstAttribute="trailing" secondItem="Xg9-u3-Bi7" secondAttribute="trailing" constant="132" id="gG6-DU-6xr"/>

@@ -20,6 +20,8 @@ class PhotoJournalViewController: UIViewController {
     }
     private var scrollDirection = Int()
     private var darkModeId = Int()
+    private var backGroundColor = UIColor(red: 218, green: 222, blue: 218, alpha: 1)
+    private var textColor: UIColor?
     
     //MARK: - OUtlets:
     
@@ -47,20 +49,34 @@ class PhotoJournalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         photoJournalCollectionView.dataSource = self
+//        settingsMode()
         for photo in photos {
             print("Name: \(photos.description), ID:\(photo.id)")
         }
    }
 
+    //MARK: - Methods - ActionSheet
     func presentsActionSheet(id: Int, photo: PhotoJournal){
+        let editAction = UIAlertAction(title: "Edit Caption", style: .default, handler:{ (action) in
+            
+        let storyboard = UIStoryboard.init(name: "Main", bundle:nil)
+        let addJournalEntryVC = storyboard.instantiateViewController(withIdentifier: "addJournalEntryVC") as! JournalEntryImagePickerViewController
+        
+        addJournalEntryVC.savedPhoto = photo
+        addJournalEntryVC.delegate = self
+        self.present(addJournalEntryVC, animated: true, completion: nil)
+        })
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
             self.deletePhoto(with: id)
+        
         })
         
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(cancelAction)
         actionSheet.addAction(deleteAction)
+        actionSheet.addAction(editAction)
         self.present(actionSheet, animated: true, completion: nil)
     }
     
@@ -93,7 +109,6 @@ extension PhotoJournalViewController: UICollectionViewDataSource {
         cell.journalTimeStampLabel.text = photo.timeStamp
         let image = UIImage(data: photo.imageData)
         cell.journalImageView.image = image
-        
         cell.buttonSelectedFunction = {
             self.presentsActionSheet(id: photo.id, photo: photo)
         }
@@ -114,6 +129,8 @@ extension PhotoJournalViewController: LoadDataDelegate {
         }
     }
 }
+
+
 extension PhotoJournalViewController: PhotoDelegate{
     func passData(tag: Int) {
         print(tag)
@@ -127,6 +144,7 @@ extension PhotoJournalViewController: PhotoDelegate{
         photoJournalCollectionView.reloadData()
     }
 }
+
 extension PhotoJournalViewController: darkProtocol{
     func passDarkModeData(tag: Int) {
         darkModeId = tag
@@ -138,4 +156,28 @@ extension PhotoJournalViewController: darkProtocol{
     }
     
 }
+
+//extension PhotoJournalViewController {
+//
+//private func settingsMode(){
+//    let mode = UserDefaultWrapper.manager.getDarkMode()
+//    switch mode{
+//        
+//    case 0:
+//        self.photoJournalCollectionView.backgroundColor =  UIColor.lightGray
+//        self.backGroundColor = UIColor.lightGray
+//        self.textColor = UIColor.blue
+//        
+//    case 1:
+//        self.photoJournalCollectionView.backgroundColor = UIColor.black
+//        self.backGroundColor = UIColor.black
+//        self.textColor = UIColor.white
+//        
+//    default:
+//        self.photoJournalCollectionView.backgroundColor = UIColor.darkGray
+//        self.backGroundColor = UIColor.lightGray
+//        self.textColor = UIColor.black
+//        }
+//    }
+//}
 

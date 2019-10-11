@@ -49,11 +49,13 @@ class SettingsViewController: UIViewController {
         scrollOrientationLabel.textColor = .white
         settingsLabel.textColor = .white
     }
+    
     func grayMode(){
         view.backgroundColor = .lightGray
         darkModeLabel.textColor = .black
         scrollOrientationLabel.textColor = .black
     }
+    
         @IBAction func darkModeSegment(_ sender: UISegmentedControl) {
             darkDelegate?.passDarkModeData(tag: sender.selectedSegmentIndex)
                 darkModeInt = sender.selectedSegmentIndex
@@ -66,6 +68,7 @@ class SettingsViewController: UIViewController {
                 grayMode()
             }else {darkMode()}
         }
+    
         @IBAction func scrollButton(_ sender: UISegmentedControl) {
             delegate?.passData(tag: sender.selectedSegmentIndex)
         }
