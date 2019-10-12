@@ -19,8 +19,6 @@ class PhotoJournalViewController: UIViewController {
         }
     }
     
-    private var backGroundColor = UIColor(red: 218, green: 222, blue: 218, alpha: 1)
-    private var textColor: UIColor?
     private var scrollDirection = Int()
     private var darkModeId = Int()
 

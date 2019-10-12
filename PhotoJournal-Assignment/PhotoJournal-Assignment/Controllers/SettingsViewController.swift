@@ -35,11 +35,11 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(true)
         darkModeOn.selectedSegmentIndex = darkModeInt
         scrollHorizontalOff.selectedSegmentIndex = selectedScroll
-        changeBackGround()
+        replaceBackGround()
     }
     private func loadUsersDefaultMode(){
         if let mode = UserDefaultWrapper.manager.getDarkMode(){
-           changeBackGround()
+           replaceBackGround()
             darkModeOn.selectedSegmentIndex = mode
            }
        }
@@ -60,11 +60,11 @@ class SettingsViewController: UIViewController {
     @IBAction func darkModeSegment(_ sender: UISegmentedControl) {
         darkDelegate?.passDarkModeData(tag: sender.selectedSegmentIndex)
             darkModeInt = sender.selectedSegmentIndex
-        UserDefaultWrapper.manager.store(mode: darkModeInt)
-        changeBackGround()
+        UserDefaultWrapper.manager.saveUserSetting(mode: darkModeInt)
+        replaceBackGround()
     }
 
-    func changeBackGround() {
+    func replaceBackGround() {
         if darkModeInt == 0 {
             grayMode()
         } else {darkMode()}

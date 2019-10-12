@@ -14,8 +14,8 @@ protocol LoadDataDelegate: AnyObject {
 
 protocol PhotoDelegate: AnyObject{
     func passData(tag: Int)
- 
 }
+
 protocol darkProtocol: AnyObject {
     func passDarkModeData(tag: Int)
 }

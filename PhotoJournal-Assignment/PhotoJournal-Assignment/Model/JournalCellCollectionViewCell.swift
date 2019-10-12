@@ -19,8 +19,8 @@ class JournalCell: UICollectionViewCell {
     @IBOutlet weak var journalOptionButton: UIButton!
     @IBOutlet weak var journalTimeStampLabel: UILabel!
     @IBAction func journalOptionButtonSelected(_ sender: UIButton) {
-        if let closure = buttonSelectedFunction {
-            closure()
+        if let closureButton = buttonSelectedFunction {
+            closureButton()
         }
     }
 }

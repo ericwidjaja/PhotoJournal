@@ -11,7 +11,7 @@ import Foundation
 class UserDefaultWrapper {
     static let manager = UserDefaultWrapper()
 
-    func store(mode: Int) {
+    func saveUserSetting(mode: Int) {
         UserDefaults.standard.set(mode, forKey: modeKey)
     }
     func getDarkMode() -> Int? {
